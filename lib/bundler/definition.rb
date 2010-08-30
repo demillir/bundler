@@ -40,7 +40,7 @@ module Bundler
 
       if lockfile && File.exists?(lockfile)
         @lockfile_contents = Bundler.read_file(lockfile)
-        locked = LockfileParser.new(@lockfile_contents)
+        locked = LockfileParser.new(lockfile)
         @platforms      = locked.platforms
 
         if unlock != true
